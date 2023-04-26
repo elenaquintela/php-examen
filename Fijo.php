@@ -11,21 +11,21 @@ class Fijo extends Plantilla
     parent::__construct($dni, $nombre, $apellidos, $anhoIngreso);
     $anhoActual = date("Y");
     $this->antiguedad = $anhoActual - $this->anhoIngreso;
+  }
+
+  function getSueldo() : int
+  {
     if ($this->antiguedad >= 2 && $this->antiguedad <= 7) {
       $this->sueldo += $this->sueldo * 0.15;
     } else if ($this->antiguedad > 7) {
       $this->sueldo += $this->sueldo * 0.25;
     }
-  }
-
-  function getSueldo() : int
-  {
     return $this->sueldo;
   }
 
   function __toString(): string
   {
-    return sprintf("DNI: %d <br> Nombre: %s %s<br> Fecha de ingreso: %s <br> Antigüedad: %s años<br> Sueldo: %s €<hr>", $this->dni, $this->nombre, $this->apellidos, $this->anhoIngreso, $this->antiguedad , $this->sueldo);
+    return sprintf("Nombre: %s %s <br> DNI: %s <br> Fecha de ingreso: %s <br> Antigüedad: %s años<br> Sueldo: %s €<hr>", $this->nombre, $this->apellidos, $this->dni, $this->anhoIngreso, $this->antiguedad , $this->sueldo);
   }
 }
 

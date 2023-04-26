@@ -40,7 +40,7 @@ class Eventual extends Plantilla
 
   function __toString(): string
   {
-    return sprintf("DNI: %d <br> Nombre: %s <br> Apellidos: %s <br> Webs encargadas: %s %s<br> Sueldo: %s €<hr>", $this->dni, $this->nombre, $this->apellidos, $this->webs, $this->tipoWeb, $this->sueldo);
+    return sprintf("Nombre: %s %s<br> DNI: %s <br> Fecha de ingreso: %s años<br> Sueldo: %s €<hr>", $this->nombre, $this->apellidos, $this->dni, $this->anhoIngreso, $this->sueldo);
   }
 }
 
