@@ -8,7 +8,7 @@ class Eventual extends Plantilla
   protected ?string $tipoWeb;
   protected int $sueldo;
 
-  function __construct(string $dni, string $nombre, string $apellidos, int $webs, ?string $tipoWeb)
+  function __construct(string $dni, string $nombre, string $apellidos, int $webs, ?string $tipoWeb = '')
   {
     parent::__construct($dni, $nombre, $apellidos, null);
     $this->webs = $webs;
@@ -37,8 +37,16 @@ class Eventual extends Plantilla
     }
     return $this->sueldo;
   }
+
+  function __toString(): string
+  {
+    return sprintf("DNI: %d <br> Nombre: %s <br> Apellidos: %s <br> Webs encargadas: %s %s<br> Sueldo: %s €<hr>", $this->dni, $this->nombre, $this->apellidos, $this->webs, $this->tipoWeb, $this->sueldo);
+  }
 }
 
 $e = new Eventual('34891773F', 'Juan', 'González Salvado', 2, 'Multilenguaje');
+$e2 = new Eventual('20382013J', 'Sonia', 'Pérez Montana', 3);
 $e->getSueldo();
-print_r($e);
+$e2->getSueldo();
+echo $e;
+echo $e2;
