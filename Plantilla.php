@@ -37,6 +37,22 @@ abstract class Plantilla
     return $this->anhoIngreso;
   }
 
+  function setDni(string $dni) {
+    $this->dni = $dni;
+  }
+
+  function setNombre(string $nombre) {
+    $this->nombre = $nombre;
+  }
+
+  function setApellidos(string $apellidos) {
+    $this->apellidos = $apellidos;
+  }
+
+  function setAnhoIngreso(int $anhoIngreso) {
+    $this->anhoIngreso = $anhoIngreso;
+  }
+
 }
 
 
