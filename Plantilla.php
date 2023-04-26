@@ -19,66 +19,43 @@ abstract class Plantilla
     $this->anhoIngreso = $anhoIngreso;
   }
 
-  function getDni()
+  function getDni(): string
   {
     return $this->dni;
   }
 
-  function getNombre()
+  function getNombre(): string
   {
     return $this->nombre;
   }
 
-  function getApellidos() {
+  function getApellidos() : string
+  {
     return $this->apellidos;
   }
 
-  function getAnhoIngreso() {
+  function getAnhoIngreso() : string
+  {
     return $this->anhoIngreso;
   }
 
-  function setDni(string $dni) {
+  function setDni(string $dni)
+  {
     $this->dni = $dni;
   }
 
-  function setNombre(string $nombre) {
+  function setNombre(string $nombre)
+  {
     $this->nombre = $nombre;
   }
 
-  function setApellidos(string $apellidos) {
+  function setApellidos(string $apellidos)
+  {
     $this->apellidos = $apellidos;
   }
 
-  function setAnhoIngreso(?int $anhoIngreso) {
+  function setAnhoIngreso(?int $anhoIngreso)
+  {
     $this->anhoIngreso = $anhoIngreso;
   }
-
 }
-
-
-class Fijo extends Plantilla
-{
-  protected float $sueldo = 1200;
-
-  function __construct (string $dni, string $nombre, string $apellidos,int $anhoIngreso) {
-    parent::__construct($dni,$nombre, $apellidos,$anhoIngreso);
-  }
-
-  function getSueldo() {
-    $anhoActual = date("Y");
-    $diff = $anhoActual - $this->anhoIngreso;
-    if ($diff >= 2 && $diff <= 7) {
-      $this->sueldo += $this->sueldo * 0.15;
-    } else if ($diff > 7) {
-      $this->sueldo += $this->sueldo * 0.25;
-    }
-    return $this->sueldo;
-  }
-
-}
-
-$f = new Fijo('49273881C', 'Isabel', 'Rodríguez García', 2013);
-$f->getSueldo();
-print_r($f);
-
-
