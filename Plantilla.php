@@ -39,7 +39,4 @@ abstract class Plantilla
 
 }
 
-$p = new Plantilla('33452003D', 'Isabel', 'Rodríguez', 2022 );
-print_r($p);
-
 

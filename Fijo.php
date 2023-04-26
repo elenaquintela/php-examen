@@ -22,6 +22,6 @@ class Fijo extends Plantilla
 
 }
 
-$f = new Fijo('49273881C', 'Juanito', 'Gómez', 2013);
+$f = new Fijo('49273881C', 'Isabel', 'Rodríguez García', 2013);
 $f->getSueldo();
 print_r($f);
